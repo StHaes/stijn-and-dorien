@@ -1,5 +1,6 @@
 <div class="max-w-5xl mx-auto px-4 sm:px-6">
   <h1 id="aanwezigheid">Aanwezigheid</h1>
+
   <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
     Er liep iets mis, probeer het later opnieuw. Of stuur je bevestiging via sms/whatsapp.
   </div>
@@ -17,31 +18,10 @@
              class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
              placeholder="Naam">
     </div>
-    <div>
-      Aanwezig: <input formControlName="present" type="checkbox">
-    </div>
-    <div class="inline-block relative w-64">
-      <select formControlName="diet" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-        <option>Voorkeur Eten</option>
-        <option *ngFor="let option of dietOptions">{{option}}</option>
-      </select>
-      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-      </div>
-    </div>
     <div class="flex items-center border-b border-teal-500 py-2">
       <input formControlName="allergies" id="allergies"
              class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
              placeholder="Allergiën/Zwanger?">
-    </div>
-    <div class="inline-block relative w-64">
-      <select formControlName="arrival" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-        <option >Aankomst</option>
-        <option *ngFor="let time of arrivalTimes">{{time}}</option>
-      </select>
-      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-      </div>
     </div>
     <div class="flex items-center border-b border-teal-500 py-2">
 
@@ -49,10 +29,41 @@
              class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
              placeholder="Opmerkingen">
     </div>
+    <div>
+      Aanwezig: <input formControlName="present" type="checkbox">
+    </div>
+    <div class="inline-block relative w-64">
+      <select formControlName="diet"
+              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+        <option>Voorkeur Eten</option>
+        <option *ngFor="let option of dietOptions">{{option}}</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="inline-block relative w-64">
+      <select formControlName="arrival"
+              class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+        <option>Aankomst</option>
+        <option *ngFor="let time of arrivalTimes">{{time}}</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
+      </div>
+    </div>
+
 
     <div class="flex items-center py-2">
-      <button class="bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded"
-              type="submit">Verzenden</button>
+      <button
+        class="bg-transparent hover:bg-pink-500 text-pink-700 font-semibold hover:text-white py-2 px-4 border border-pink-500 hover:border-transparent rounded"
+        type="submit">Verzenden
+      </button>
     </div>
 
   </form>
