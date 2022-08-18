@@ -78,7 +78,6 @@ export class AttendanceFormComponent implements OnInit {
   }
 
   resetErrors(): void {
-    this.succesMessage = false;
     this.formError = false;
     this.error = false;
   }
