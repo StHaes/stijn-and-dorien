@@ -1,12 +1,3 @@
-export interface MongoDbInterface {
-
-  collection: string;
-  database: string;
-  dataSource: string;
-  document: DocumentInterface;
-
-}
-
 export interface DocumentInterface {
   firstName: string;
   name: string;

@@ -4,3 +4,7 @@ div {
 button {
   padding-top: 10px;
 }
+
+p.byline{
+  font-size: 12px;
+}

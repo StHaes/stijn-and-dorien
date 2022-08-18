@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MongodbService} from '../mongodb.service';
-import {DocumentInterface} from '../interfaces/mongoDb.interface';
+import {DocumentInterface} from '../interfaces/document.interface';
 
 @Component({
   selector: 'app-attendance-form',
@@ -12,8 +12,9 @@ export class AttendanceFormComponent implements OnInit {
   form: FormGroup;
   error = false;
   formError = false;
+  succesMessage = false;
 
-  dietOptions =  [
+  dietOptions = [
     'ik eet alles', 'vegetarisch'
   ];
 
@@ -30,7 +31,10 @@ export class AttendanceFormComponent implements OnInit {
       diet: ['', [Validators.required]],
       allergies: ['', [Validators.required]],
       arrival: ['', [Validators.required]],
-      remarks: ['', [Validators.required]]
+      remarks: ['', []]
+    });
+    this.form.valueChanges.subscribe((value) => {
+      this.resetErrors();
     });
   }
 
@@ -38,23 +42,9 @@ export class AttendanceFormComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  onSubmit() {
 
     if (this.form.valid) {
-      // @ts-ignore
-      console.log('Name:' + this.form.get('firstName').value);
-      // @ts-ignore
-      console.log('Name:' + this.form.get('name').value);
-      // @ts-ignore
-      console.log('Name:' + this.form.get('present').value);
-      // @ts-ignore
-      console.log('Name:' + this.form.get('diet').value);
-      // @ts-ignore
-      console.log('Name:' + this.form.get('arrival').value);
-      // @ts-ignore
-      console.log('Name:' + this.form.get('remarks').value);
-
-
       const documentInterface: DocumentInterface = {
         // @ts-ignore
         firstName: this.form.get('firstName').value,
@@ -65,16 +55,14 @@ export class AttendanceFormComponent implements OnInit {
         // @ts-ignore
         diet: this.form.get('diet').value,
         // @ts-ignore
-        remarks: this.form.get('remarks').value,
+        remarks: this.form.get('remarks').value ? this.form.get('remarks').value : '',
         // @ts-ignore
         arrival: this.form.get('arrival').value
       }
 
       this.service.saveForm(documentInterface).subscribe((response) => {
-        console.log('response: ', response);
-
-      }, (error1 => {
-        console.log(error1);
+        this.clearForm(true);
+        }, (error1 => {
         this.error = true;
       }))
     } else {
@@ -82,7 +70,17 @@ export class AttendanceFormComponent implements OnInit {
     }
 
 
+  }
 
+  clearForm(succes: boolean): void {
+    this.succesMessage = succes;
+    this.form.reset();
+  }
+
+  resetErrors(): void {
+    this.succesMessage = false;
+    this.formError = false;
+    this.error = false;
   }
 
 }
