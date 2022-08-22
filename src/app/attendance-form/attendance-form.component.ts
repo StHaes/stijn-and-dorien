@@ -19,7 +19,7 @@ export class AttendanceFormComponent implements OnInit {
   ];
 
   arrivalTimes = [
-    'Gemeentehuis', 'Receptie', 'Diner', 'Welkomsdrink'
+    '11:00 - Gemeentehuis', '15:30 - Receptie', '17:30 - Diner', '21:30 - Welkomsdrink'
   ]
 
   constructor(private formBuilder: FormBuilder,
