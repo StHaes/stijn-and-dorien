@@ -16,22 +16,22 @@
     Gelieve alle velden in te vullen.
   </div>
   <form class="w-full max-w-sm mx-auto" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="flex items-center border-b border-teal-500 py-2">
+    <div class="flex items-center border-b border-usf border-opacity-10 py-2">
       <input formControlName="firstName" id="firstName"
              class="appearance-none bg-transparent border-none focus:outline-none leading-tight mr-3 ng-invalid ng-pristine ng-untouched p-3 placeholder-black text-gray-700 w-full"
              placeholder="Voornaam">
     </div>
-    <div class="flex items-center border-b border-teal-500 py-2">
+    <div class="flex items-center border-b border-usf border-opacity-10 py-2">
       <input formControlName="name" id="name"
              class="appearance-none bg-transparent border-none focus:outline-none leading-tight mr-3 ng-invalid ng-pristine ng-untouched p-3 placeholder-black text-gray-700 w-full"
              placeholder="Naam">
     </div>
-    <div class="flex items-center border-b border-teal-500 py-2">
+    <div class="flex items-center border-b border-usf border-opacity-10 py-2">
       <input formControlName="allergies" id="allergies"
              class="appearance-none bg-transparent border-none focus:outline-none leading-tight mr-3 ng-invalid ng-pristine ng-untouched p-3 placeholder-black text-gray-700 w-full"
              placeholder="Allergiën/Zwanger?">
     </div>
-    <div class="flex items-center border-b border-teal-500 py-2">
+    <div class="flex items-center border-b border-usf border-opacity-10 py-2">
 
       <input formControlName="remarks" id="remarks"
              class="appearance-none bg-transparent border-none focus:outline-none leading-tight mr-3 ng-invalid ng-pristine ng-untouched p-3 placeholder-black text-gray-700 w-full"
@@ -43,7 +43,7 @@
     </div>
     <div class="inline-block relative w-full">
       <select formControlName="diet"
-              class="appearance-none bg-white block border border-gray-400 focus:outline-none focus:shadow-outline hover:border-gray-500 leading-tight ng-invalid ng-pristine ng-touched px-3 py-4 pr-8 mb-2 rounded w-full">
+              class="appearance-none bg-white block border border-usf border-opacity-50 focus:outline-none focus:shadow-outline hover:border-gray-500 leading-tight ng-invalid ng-pristine ng-touched px-3 py-4 pr-8 mb-2 rounded w-full">
         <option>Voorkeur Eten</option>
         <option *ngFor="let option of dietOptions">{{option}}</option>
       </select>
@@ -56,7 +56,7 @@
 
     <div class="inline-block relative w-full">
       <select formControlName="arrival"
-              class="appearance-none bg-white block border border-gray-400 focus:outline-none focus:shadow-outline hover:border-gray-500 leading-tight ng-invalid ng-pristine ng-touched px-3 py-4 pr-8 rounded w-full">
+              class="appearance-none bg-white block border border-usf border-opacity-50 focus:outline-none focus:shadow-outline hover:border-gray-500 leading-tight ng-invalid ng-pristine ng-touched px-3 py-4 pr-8 rounded w-full">
         <option>Aankomst</option>
         <option *ngFor="let time of arrivalTimes">{{time}}</option>
       </select>
