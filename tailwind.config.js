@@ -5,7 +5,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'usf': '#67131e',
+      },
+    },
   },
   variants: {
     extend: {},
