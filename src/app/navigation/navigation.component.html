@@ -1,15 +1,15 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 
-    <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+    <div class="border-b border-opacity-10 border-usf flex flex-col items-center justify-between md:space-x-10 px-6 py-3 sm:flex-row sm:px-11 sm:py-6">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="#" (click)="scrollToTop()">
           <img class="h-8 w-auto sm:h-10" src="/assets/rings.svg" alt="">
         </a>
       </div>
-      <nav class="hidden md:flex space-x-10">
-        <a href="/#" class="text-base font-medium text-gray-500 hover:text-gray-900"> Home </a>
-        <a href="/#aanwezigheid" class="text-base font-medium text-gray-500 hover:text-gray-900"> Aanwezigheid </a>
-        <a href="/#locatie" class="text-base font-medium text-gray-500 hover:text-gray-900"> Locatie </a>
-        <a href="/#cadeautip" class="text-base font-medium text-gray-500 hover:text-gray-900"> Cadeautip </a>
+      <nav class="flex gap-2 justify-between mt-3 sm:gap-7 sm:w-auto w-full">
+        <a (click)="scrollToAnchor('#home')" class="border-b border-transparent font-medium hover:border-usf hover:opacity-75 pr-0 scale-100 text-usf transform transition-all"> Home </a>
+        <a (click)="scrollToAnchor('#aanwezigheid')" class="border-b border-transparent font-medium hover:border-usf hover:opacity-75 pr-0 scale-100 text-usf transform transition-all"> Aanwezigheid </a>
+        <a (click)="scrollToAnchor('#locatie')" class="border-b border-transparent font-medium hover:border-usf hover:opacity-75 pr-0 scale-100 text-usf transform transition-all"> Locatie </a>
+        <a (click)="scrollToAnchor('#cadeautip')" class="border-b border-transparent font-medium hover:border-usf hover:opacity-75 pr-0 scale-100 text-usf transform transition-all"> Cadeautip </a>
       </nav>
     </div>

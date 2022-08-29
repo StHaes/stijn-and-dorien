@@ -3,17 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  color: #67121f;
-  font-family: "Great Vibes", cursive;
-  font-size: 80px;
-  line-height: 160px;
-  font-weight: normal;
-  margin-bottom: 0px;
-  margin-top: 40px;
-  text-align: center;
-  text-shadow: 0 1px 1px #fff;
-}
+/*h1 {*/
+/*  color: #67121f;*/
+/*  font-family: "Great Vibes", cursive;*/
+/*  font-size: 3rem;*/
+/*  line-height: 160px;*/
+/*  font-weight: normal;*/
+/*  margin-bottom: 0px;*/
+/*  margin-top: 40px;*/
+/*  text-align: center;*/
+/*  text-shadow: 0 1px 1px #fff;*/
+/*}*/
 
 a {
   padding-right: 10px
